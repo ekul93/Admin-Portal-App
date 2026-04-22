@@ -1,15 +1,11 @@
-import { Text, View } from "react-native";
+import { Redirect } from "expo-router";
+import { useAuth } from "../src/context/AuthContext";
+import  SplashScreen  from "@/src/components/SplashScreen"
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+  const { isLoggedIn, loading} = useAuth();
+
+  if(loading) return <SplashScreen />
+  if(isLoggedIn) return <Redirect href="/" />;
+  return <Redirect href="/login" />;
 }
