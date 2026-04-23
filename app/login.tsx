@@ -1,15 +1,22 @@
-import {useState} from 'react';
+import {useState, useEffect } from 'react';
 import {View, StyleSheet, KeyboardAvoidingView, Platform} from 'react-native';
 import { Text, TextInput, Button, HelperText } from 'react-native-paper';
 import {useAuth} from '../src/context/AuthContext';
+import { router } from 'expo-router';
 
 export default function LoginScreen() {
-    const { login, loading, error } = useAuth();
+    const { login, isLoggedIn, error, loading } = useAuth();
     const [username, setUsername ] = useState('');
     const [password, setPassword ] = useState('');
     const [showPass, setShowPass ] = useState(false);
 
     const handleLogin = () => login(username, password);
+
+    useEffect(() => {
+    if(isLoggedIn){
+        router.replace('/(home)');
+    }
+}, [isLoggedIn]);
 
     return(
         <KeyboardAvoidingView style={styles.container}
