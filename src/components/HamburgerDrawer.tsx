@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4
   },
-  backdrop: { flex: 1, backgroundColor: "rgba(0,0,0,0,5)" },
+  backdrop: { flex: 1, backgroundColor: "rgba(0,0,0,0.5)" },
   drawerTitle: { paddingHorizontal: 16, paddingBottom: 2, fontWeight: "bold" },
   drawerUser: { paddingHorizontal: 16, paddingBottom: 8, color: "#888" },
   divider: { marginVertical: 8 },

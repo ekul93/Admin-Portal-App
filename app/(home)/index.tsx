@@ -44,7 +44,7 @@ export default function HomeScreen() {
         onPress={() => setModalVisible(true)}
       />
 
-      <HamburgerDrawer visible={drawerOpen} onClose={() => setDrawerOpen} />
+      <HamburgerDrawer visible={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
       <RequestModal
         visible={modalVisible}
