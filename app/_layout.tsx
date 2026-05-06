@@ -1,12 +1,15 @@
-import { AuthProvider } from "../src/context/AuthContext";
+import { ListProvider } from "@/src/context/ListContext";
 import { Slot } from "expo-router";
 import { PaperProvider } from "react-native-paper";
+import { AuthProvider } from "../src/context/AuthContext";
 
 export default function RootLayout() {
   return (
     <PaperProvider>
       <AuthProvider>
-        <Slot />
+        <ListProvider>
+          <Slot />
+        </ListProvider>
       </AuthProvider>
     </PaperProvider>
   );
